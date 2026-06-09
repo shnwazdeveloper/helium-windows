@@ -45,6 +45,8 @@ Use this map when editing the repo:
 - Windows installer wrapper metadata: `installer/helium.nsi`
 - Windows branding patch used during Chromium packaging:
   `patches/helium/windows/change-branding.patch`
+- In-browser About page owner line:
+  `patches/helium/windows/about-page-dev-by-shnwaz.patch`
 - Version patch used during Chromium packaging:
   `patches/helium/windows/helium-versioning.patch`
 
