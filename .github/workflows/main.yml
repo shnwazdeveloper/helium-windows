@@ -892,7 +892,7 @@ jobs:
       finished: ${{ steps.stage.outputs.finished }}
   build-arm-final:
     needs: build-arm-15
-    if: ${{ !cancelled() && !failure() }}
+    if: ${{ inputs.build_arm && !cancelled() && !failure() }}
     runs-on: ${{ github.event.inputs.runner }}
     steps:
       - name: Checkout

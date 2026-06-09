@@ -80,8 +80,12 @@ jobs:
 {%- endfor %}
   {{ prefix }}-final:
     needs: {{ prefix }}-15
+{%- if arch == "arm" %}
+    if: {% raw %}${{ inputs.build_arm && !cancelled() && !failure() }}{% endraw %}
+{%- else %}
+    if: {% raw %}${{ !cancelled() && !failure() }}{% endraw %}
+{%- endif %}
 {%- raw %}
-    if: ${{ !cancelled() && !failure() }}
     runs-on: ${{ github.event.inputs.runner }}
     steps:
       - name: Checkout
